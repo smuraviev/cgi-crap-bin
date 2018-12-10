@@ -10,8 +10,8 @@ my %cfg;
 use JSON::XS;
 print "Content-type: text/html; charset=UTF-8\n\n";
 # Config:
-Config::Simple->import_from('/usr/home/haelkar/main-cg.cfg', \%cfg) || die Config::Simple->error(); # боевая конфа
-#Config::Simple->import_from('/usr/home/haelkar/cgp.cfg', \%cfg);# || die Config::Simple->error();
+Config::Simple->import_from('/usr/home/-/-.cfg', \%cfg) || die Config::Simple->error(); # боевая конфа
+#Config::Simple->import_from('/usr/home/-/-.cfg', \%cfg);# || die Config::Simple->error();
 # Ввод
 $i = param('st');
 $r = param('rec');
@@ -718,20 +718,20 @@ $ldap = Net::LDAPS->new('cgp2.pu.ru',port=>636,timeout=>20,require=>'verify',cap
  }
 }
 #----------------------------------------------------------------------------------
-if ($r =~m/\d{7,}$/){new_acc($i)}
-elsif ($r eq 'givemeinfoplease') {get_info($i)}
-elsif ($r eq 'change_main') {change_alias($i)}
-elsif ($r eq 'cgp_pass_now') {cgp_pass($i)}
-elsif ($r eq 'forwarder_please') {forwarder($i)}
-elsif ($r eq 'whothehellareyou') {whois($i)}
-elsif ($r eq 'subscribeme') {lists($i)}
-elsif ($r eq 'splitpersonality') {gfw($i)}
-elsif ($r eq 'istandalone') {exc($i)}
-elsif($r eq '1am@$$umingDirectControl#'){GetSession($i)}
-elsif($r eq 'Nobody_moves!Idroppedmy_Brain'){KillSession($i)}
-elsif($r eq 'therecanbeonlyone'){Check_Name($i)}
-elsif($r eq 'sync') {sync_aliases($i)} 
-elsif($r eq 'new_version_kreator'){new_test($i)} else {print "[{\"Status\":\"ERROR\",\"Message\":\"Hey, stupid! What are ya tryin' to do?\"}]"};
+if ($r =~m/\d{7,}$/){new_acc($i)} # create post passphrase
+elsif ($r eq '***') {get_info($i)}
+elsif ($r eq '***') {change_alias($i)}
+elsif ($r eq '***') {cgp_pass($i)}
+elsif ($r eq '***') {forwarder($i)}
+elsif ($r eq '***') {whois($i)}
+elsif ($r eq '***') {lists($i)}
+elsif ($r eq '***') {gfw($i)}
+elsif ($r eq '***') {exc($i)}
+elsif($r eq '***'){GetSession($i)}
+elsif($r eq '***'){KillSession($i)}
+elsif($r eq '***'){Check_Name($i)}
+elsif($r eq '***') {sync_aliases($i)} 
+elsif($r eq '***'){new_test($i)} else {print "[{\"Status\":\"ERROR\",\"Message\":\"Hey, stupid! What are ya tryin' to do?\"}]"};
 
 
 # запись в log
